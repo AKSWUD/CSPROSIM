@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS 职业选手生涯模拟器</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vrs.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="text.js"></script>
+  <script defer src="game.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <h1>CS 职业选手生涯模拟器</h1>
+  <p>点击选项推进生涯。刷新页面重新开始，当前进度不会保存。</p>
+  <noscript>请启用浏览器 JavaScript 后游玩。</noscript>
+  <form id="start-form">
+    <label for="player-id">自定义选手 ID</label>
+    <input id="player-id" name="player-id" type="text" maxlength="24" placeholder="例如：Rookie" autocomplete="off" required>
+    <button type="submit">开始生涯</button>
+  </form>
+  <pre id="output" aria-label="游戏记录"></pre>
+  <section id="choices-panel" aria-labelledby="question" hidden>
+    <h2 id="question"></h2>
+    <div id="choices" role="group" aria-labelledby="question"></div>
+  </section>
+</body>
+</html>

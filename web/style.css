@@ -1,0 +1,59 @@
+/* 深色文字区保留终端的明暗层次，长行在窄屏中自动换行。 */
+:root { color-scheme: dark; }
+body {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0 12px 24px;
+    color: #e5e7eb;
+    background: #111827;
+    font-family: system-ui, sans-serif;
+}
+pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+    font-family: Consolas, "Courier New", monospace;
+}
+h1 { font-size: 24px; }
+h2 { font-size: 18px; color: #67e8f9; }
+
+/* 颜色对应文本中的青、绿、黄、红、品红；加粗和暗色可与颜色组合使用。 */
+.text-cyan { color: #67e8f9; }
+.text-green { color: #86efac; }
+.text-yellow { color: #fde047; }
+.text-red { color: #f87171; }
+.text-magenta { color: #f0abfc; }
+.text-bold { font-weight: 700; }
+.text-dim { opacity: 0.65; }
+
+/* ID 表单独占一列，在手机宽度内保留完整的输入和提交区域。 */
+#start-form { display: grid; gap: 8px; max-width: 420px; }
+input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #64748b;
+    border-radius: 4px;
+    color: inherit;
+    background: #1e293b;
+    font: inherit;
+}
+input:focus-visible { outline: 2px solid #67e8f9; }
+
+/* 每个按钮完整显示一个选项；天然支持鼠标、触屏以及 Tab/回车/空格操作。 */
+#choices { display: grid; gap: 8px; }
+button {
+    padding: 12px;
+    border: 1px solid #64748b;
+    border-radius: 4px;
+    color: inherit;
+    background: #1e293b;
+    font: inherit;
+    text-align: left;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+button:hover, button:focus-visible { background: #334155; outline: 2px solid #67e8f9; }
+button:disabled { opacity: 0.6; cursor: default; }
+[hidden] { display: none !important; }
