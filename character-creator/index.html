@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="分配80点基础属性，创建你的CS职业选手，查看个人七维与战力。">
+<title>选手开卡 · CS生涯模拟</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script defer src="data.js"></script>
+<script defer src="model.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<header><div><p class="eyebrow">CS CAREER / PLAYER CARD</p><h1>创建你的职业选手</h1><p class="subtitle">分配属性，找到自己的赛场位置。</p></div><span class="badge">选手开卡</span></header>
+<main>
+<section class="creator" aria-label="选手开卡">
+<div class="panel allocation">
+<div class="section-heading"><h2>基础属性</h2><div class="actions"><button id="average">平均分配</button><button id="clear" class="quiet">清空</button></div></div>
+<p class="hint">80点自由分配，每项最多25点。预算用满后，可以先减少其他属性。</p>
+<div class="budget"><span>已分配 <strong id="used">80</strong><span class="muted"> / 80</span></span><span>剩余 <strong id="left">0</strong> 点</span></div>
+<progress id="budget-bar" max="80" value="80" aria-label="已用开卡点数"></progress>
+<div id="base-inputs"></div>
+<p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+<div class="position"><label for="role">模拟位置</label><select id="role"></select><p class="hint">切换位置只影响战力贡献，七维保持不变。</p></div>
+</div>
+<div class="panel player-card">
+<div class="section-heading"><h2>选手面板</h2><span id="role-badge" class="badge"></span></div>
+<div class="power-card"><div><span class="muted">个人战力贡献</span><strong id="power"></strong></div><span class="power-note">当前位置 · 单人贡献</span></div>
+<div class="section-heading stats-heading"><h3>比赛七维</h3><span class="muted">0～100</span></div>
+<div id="stats"></div>
+</div>
+</section>
+<section class="panel teams" aria-labelledby="teams-title">
+<div class="section-heading"><h2 id="teams-title">职业队伍参考</h2><span class="muted">10支队伍 · 50名选手</span></div>
+<p class="hint">选择队伍查看阵容、个人七维与战力。</p>
+<div id="team-tabs" class="team-grid" aria-label="选择参考队伍"></div>
+<div class="roster-heading"><h3 id="team-name"></h3><span>队伍战力 <strong id="team-power"></strong></span></div>
+<p class="hint">选手按个人战力贡献从高到低排列。条形长度比较个人总贡献，颜色表示七维来源；下方列出各项的战力贡献。</p>
+<div id="legend" class="legend" aria-label="七维颜色图例"></div>
+<div id="team-contributions"></div>
+<details class="raw-details"><summary>查看阵容原始七维</summary>
+<p class="mobile-hint">左右滑动查看完整七维。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="选手七维与战力表"><table id="roster"></table></div></details>
+</section>
+</main>
+<footer>CS职业生涯模拟 · 选手开卡</footer>
+<noscript><p class="panel">请启用浏览器的JavaScript以使用开卡功能。</p></noscript>
+</body>
+</html>
